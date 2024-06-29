@@ -49,15 +49,15 @@ function reiniciar() {
 function validacoes(quantidade, de, ate, quantidadePossivel) {
     if(quantidade <= 0 ){
         alert('Erro: insira uma quantidade válida!');
-        alterarStatusBotao();
+        reiniciar();
         return false;
     } else if (de > ate) {
         alert('Erro: o número mínimo é maior que o máximo!');
-        alterarStatusBotao();
+        reiniciar();
        return false;
     } else if (quantidade > quantidadePossivel) {
         alert('Erro: quantidade de elementos excedida!');
-        alterarStatusBotao();
+        reiniciar();
         return false;
     }
     return true;
