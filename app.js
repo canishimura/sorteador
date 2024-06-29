@@ -9,6 +9,7 @@ function sortear () {
 
 
     if (validacoesOk) {
+        
         for (let i = 0; i < quantidade; i++) {
             do {
                 numero = obterNumeroAleatorio (de, ate);
@@ -16,11 +17,15 @@ function sortear () {
             
             sorteados.push(numero);
         }
+
         let resultado = document.getElementById('resultado');
         resultado.innerHTML = `<label class="texto__paragrafo">Números sorteados:  ${sorteados}</label>`;
-        alterarStatusBotao();
+
+        let botao = document.getElementById('btn-reiniciar');
+        if (botao.classList.contains('container__botao-desabilitado')){
+            alterarStatusBotao();
+        }
     }
-    
 }
 
 function obterNumeroAleatorio(min, max) {
